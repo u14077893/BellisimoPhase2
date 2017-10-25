@@ -1,0 +1,81 @@
+package za.co.hlengi;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.google.gson.JsonObject;
+
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@RestController
+public class ProductController 
+{
+	protected ProductRepository repository;
+
+	@Autowired
+	public ProductController(ProductRepository repository) 
+	{
+		this.repository = repository;
+	}
+	
+	@RequestMapping("/addProducts")
+	public Boolean addProducts()
+	{
+		repository.save(new Product());
+		return true;
+	}
+	
+	@RequestMapping("/findAll")
+	public List<JsonObject> findAllProd()
+	{
+		List<JsonObject> result;
+		for(Product prod: repository.findAll())
+		{
+			
+		}
+		
+		return result; 
+	}
+	
+	@RequestMapping("/findByID")
+	public JsonObject findProdByID(@RequestParam("id") long id)
+	{
+		Product prod = repository.findOne(id);
+		JsonObject result = Json.createObjectBuilder().add("id", prod.getProdID());
+		
+		
+		return result; 
+	}
+	
+	
+	@RequestMapping("findByName")
+	public List<JsonObject> findProdByName(@RequestParam("name") String name)
+	{
+		List<JsonObject> result;
+		
+		for(Product prod: repository.findByName(name))
+		{
+			
+		}
+		
+		return result; 
+	}
+	
+	@RequestMapping("findByCategory")
+	public List<JsonObject> findProdByCategory(@RequestParam("category") String category)
+	{
+		List<JsonObject> result;
+		
+		for(Product prod: repository.findByCategory(category))
+		{
+			
+		}
+		
+		return result; 
+	}
+
+}

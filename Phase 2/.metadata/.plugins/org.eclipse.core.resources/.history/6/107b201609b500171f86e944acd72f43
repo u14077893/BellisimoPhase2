@@ -1,0 +1,97 @@
+package za.co.hlengi;
+
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Table;
+import javax.persistence.Id;
+
+
+@Entity
+@Table(name = "products")
+public class Product implements Serializable 
+{
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long prodID;
+	
+	@Column(name="name")
+	private String name;
+	
+	@Column(name="price")
+	private Long price;
+	
+	@Column(name="category")
+	private String category;
+	
+	@Column(name="prodImage")
+	private byte[] prodImage;
+
+	public Product() 
+	{
+	}
+
+	public Product(String prodName, Long prodPrice, String prodCategory, String prodImage) 
+	{
+		this.name = prodName;
+		this.price = prodPrice;
+		this.category = prodCategory;
+		this.prodImage = prodImage;
+	}
+
+	public String getProdName() 
+	{
+		return name;
+	}
+
+	public void setProdName(String prodName)
+	{
+		this.name = prodName;
+	}
+
+	public Long getProdPrice() 
+	{
+		return price;
+	}
+
+	public void setProdPrice(Long prodPrice)
+	{
+		this.price = prodPrice;
+	}
+
+	public String getProdCategory() 
+	{
+		return category;
+	}
+
+	public void setProdCategory(String prodCategory)
+	{
+		this.category = prodCategory;
+	}
+
+	public byte[] getProdImage() 
+	{
+		return prodImage;
+	}
+
+	public void setProdImage(byte[] prodImage) 
+	{
+		this.prodImage = prodImage;
+	}
+
+	public long getProdID() 
+	{
+		return prodID;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [prodID=" + prodID + ", prodName=" + name + ", prodPrice=" + price + ", prodCategory="
+				+ category + ", prodImage=" + prodImage + "]";
+	}
+
+}

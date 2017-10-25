@@ -1,0 +1,66 @@
+
+package za.co.hlengi;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+@RestController
+public class CatalogueService
+{
+	@Autowired
+	@LoadBalanced
+	protected RestTemplate restTemplate = new RestTemplate();
+	protected String serviceUrl;
+	
+	public CatalogueService(String serviceUrl) {
+        this.serviceUrl = serviceUrl.startsWith("http") ?
+               serviceUrl : "http://" + serviceUrl;
+    }
+	
+	//Products
+	
+	@RequestMapping("/loadCatalogue")
+	public List<JSONObject> loadCatalogue() 
+	{
+		return "Hello World";
+	}
+	
+	@RequestMapping("/loadFood")
+	public List<JSONObject> loadFood() 
+	{
+		return "Hello World";
+	}
+	
+	@RequestMapping("/loadClothes")
+	public List<JSONObject> loadClothes() 
+	{
+		return "Hello World";
+	}
+	
+	@RequestMapping("/searchCatalogueID")
+	public JSONObject searchByID(@RequestParam("searchtext") Long id)
+	{
+		
+	}
+	
+	@RequestMapping("/searchCatalogueName")
+	public JSONObject searchByName(@RequestParam("searchtext") String name)
+	{
+		
+	}
+	
+	
+	//Users
+	@RequestMapping
+	public JSONObject getUser()
+	{
+	
+	}
+	
+	public Boolean checkPassword()
+	{
+		
+	}
+}

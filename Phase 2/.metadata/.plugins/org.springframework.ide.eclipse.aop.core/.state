@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="bellisimo-gateway-service"/>
+<aop-project name="bellisimo-discovery-service"/>
+<aop-project name="bellisimo-cart-service"/>
+<aop-project name="bellisimo-products-service"/>
+<aop-project name="bellisimo-users-service"/>
+<aop-project name="bellisimo-catalogue-service"/>
+</aop-reference-model>

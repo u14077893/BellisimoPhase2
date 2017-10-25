@@ -1,0 +1,60 @@
+package za.co.hlengi;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.google.gson.JsonObject;
+
+import org.springframework.web.bind.annotation.RequestParam;
+
+@RestController
+public class UsersController 
+{
+	
+	protected UsersRepository repository;
+	
+	@Autowired
+	public UsersController(UsersRepository repository)
+	{
+		this.repository = repository;
+	}
+	
+	@RequestMapping("/addProducts")
+	public Boolean addProducts()
+	{
+		repository.save(new User());
+		return true;
+	}
+	
+	@RequestMapping("/findAll")
+	public Boolean findAllUsers()
+	{
+		List<JsonObject> result = new ArrayList();
+		
+		for(User user: repository.findAll())
+		{
+			
+		}
+		
+		return result; 
+	}
+	
+	@RequestMapping("findByEmail")
+	public List<JsonObject> findUserByEmail(@RequestParam("email") String email)
+	{
+		List<JsonObject> result;
+		
+		for(User user: repository.findByEmail(email))
+		{
+			
+		}
+		
+		return result; 
+	}
+	
+
+}

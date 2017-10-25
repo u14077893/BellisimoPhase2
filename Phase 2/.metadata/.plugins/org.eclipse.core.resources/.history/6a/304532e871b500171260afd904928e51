@@ -1,0 +1,43 @@
+
+package za.co.hlengi;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class CatalogueService
+{
+	protected RestTemplate restTemplate;
+	
+	//Products
+	
+	@RequestMapping("/loadCatalogue")
+	public List<JSONObject> loadCatalogue() 
+	{
+		return "Hello World";
+	}
+	
+	@RequestMapping("/loadFood")
+	public List<JSONObject> loadFood() 
+	{
+		return "Hello World";
+	}
+	
+	@RequestMapping("/loadClothes")
+	public List<JSONObject> loadClothes() 
+	{
+		return "Hello World";
+	}
+	
+	
+	//Users
+	@RequestMapping
+	public JSONObject getUser()
+	{
+	
+	}
+	
+	public Boolean checkPassword()
+	{
+		
+	}
+}

@@ -1,0 +1,13 @@
+package za.co.hlengi;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+@EnableDiscoveryClient
+public class BellisimoCatalogueApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(BellisimoCatalogueApplication.class, args);
+	}
+}

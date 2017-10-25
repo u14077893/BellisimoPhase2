@@ -1,0 +1,7 @@
+Git Repository: https://github.com/u14077893/Bellisimo
+
+Requirements Specification: https://github.com/u14077893/Bellisimo/blob/master/Bellisimo%20Requirements%20Specification.pdf
+
+Design Document: https://github.com/u14077893/Bellisimo/blob/master/Bellisimo%20Architectural%20Design.pdf
+
+Project Plan: https://github.com/u14077893/Bellisimo/blob/master/Bellisimo%20Project%20Plan.pdf

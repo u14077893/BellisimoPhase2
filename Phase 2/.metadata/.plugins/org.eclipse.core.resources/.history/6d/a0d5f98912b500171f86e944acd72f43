@@ -1,0 +1,14 @@
+spring.application.name=users
+
+eureka.client.service-url.default-zone=http://localhost:8761/eureka/
+eureka.instance.lease-renewal-interval-in-seconds=5
+eureka.instance.lease-expiration-duration-in-seconds=10
+
+server.port=3333
+
+server.error.whitelabel.enabled=false
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/cataloguedb
+spring.datasource.username=postgres
+spring.datasource.password=postgres
+spring.jpa.hibernate.ddl-auto=create-drop

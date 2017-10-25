@@ -1,0 +1,11 @@
+spring.application.name=products
+
+eureka.client.service-url.default-zone=http://localhost:8761/eureka/
+
+server.port=8080
+
+server.error.whitelabel.enabled=false
+
+zuul.routes.catalogue.url=http://localhost:1111
+zuul.routes.products.url=http://localhost:2222
+zuul.routes.users.url=http://localhost:3333

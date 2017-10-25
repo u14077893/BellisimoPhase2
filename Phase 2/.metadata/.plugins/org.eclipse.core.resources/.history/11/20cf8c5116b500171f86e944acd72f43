@@ -1,0 +1,13 @@
+
+package za.co.hlengi;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@org.springframework.web.bind.annotation.RestController
+public class CatalogueService
+{
+	@RequestMapping("/loadCatalogue")
+	public String loadCatalogue() 
+	{
+		return "Hello World";
+	}
+}
